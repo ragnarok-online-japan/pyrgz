@@ -76,7 +76,7 @@ def main(args):
 
     while idx < (raw_contents_length -1):
         data = "{:X}".format(struct.unpack_from("<B", raw_contents[idx:(idx+1)])[0])
-        if directory is None and data == "64":
+        if data == "64":
             # Flag:d = Directory
             length: int = int(struct.unpack_from("<B", raw_contents[(idx+1):(idx+2)])[0])
             #print(f"Flag:Directory, length:{length:d}")
